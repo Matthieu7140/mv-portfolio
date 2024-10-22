@@ -29,7 +29,6 @@ function PaperComponent(props: PaperProps) {
         {...props}
         sx={{
           width: "50vw",
-          minWidth: "500px",
         }}
       />
     </Draggable>

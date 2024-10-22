@@ -1,20 +1,17 @@
 import { Box, Link, Stack, Typography } from "@mui/material";
-import { Fragment } from "react";
+import React, { useEffect } from "react";
 import ConfigPanel from "./components/ConfigPanel";
-
-// export const meta: MetaFunction = () => {
-//   return [
-//     { title: "M. Vagnon • Front-End Engineer & Designer" },
-//     {
-//       name: "description",
-//       content: "Matthieu Vagnon, Front-End Engineer and UX/UI designer.",
-//     },
-//   ];
-// };
+import { useTitle } from "./contexts/TitleContext";
 
 export default function Index() {
+  const { setTitle } = useTitle();
+
+  useEffect(() => {
+    setTitle("Home");
+  }, []);
+
   return (
-    <Fragment>
+    <React.Fragment>
       <Box
         sx={{
           position: "absolute",
@@ -58,6 +55,6 @@ export default function Index() {
           See the public repository
         </Link>
       </Stack>
-    </Fragment>
+    </React.Fragment>
   );
 }
