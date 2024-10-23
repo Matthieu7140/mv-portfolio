@@ -1,6 +1,8 @@
 import FormatPaintRoundedIcon from "@mui/icons-material/FormatPaintRounded";
 import FormatQuoteRoundedIcon from "@mui/icons-material/FormatQuoteRounded";
+import RestartAltRoundedIcon from "@mui/icons-material/RestartAltRounded";
 import {
+  Button,
   FormControl,
   MenuItem,
   Select,
@@ -75,6 +77,10 @@ const CustomTab = styled(Tab)({
   textTransform: "none",
 });
 
+const ResetButton = styled(Button)({
+  width: "fit-content",
+});
+
 function a11yProps(index: number) {
   return {
     id: `vertical-tab-${index}`,
@@ -97,6 +103,17 @@ export default function VerticalTabs() {
   //   const handleAccentChange = (e: SelectChangeEvent<string>) => {};
 
   const handleLanguageChange = (e: SelectChangeEvent<string>) => {};
+
+  const handleThemeReset = () => {
+    setTheme("system");
+  };
+
+  const handleContentReset = () => {};
+
+  const handleResetAll = () => {
+    handleThemeReset();
+    handleContentReset();
+  };
 
   return (
     <Stack direction="row" spacing={3} width="100%" height="100%">
@@ -126,6 +143,11 @@ export default function VerticalTabs() {
           label="Content"
           {...a11yProps(1)}
         />
+        <CustomTab
+          icon={<RestartAltRoundedIcon />}
+          label="Reset"
+          {...a11yProps(2)}
+        />
       </Tabs>
       <TabPanel title="Theme" value={value} index={0}>
         <ConfigFormElement title="Mode:">
@@ -145,6 +167,17 @@ export default function VerticalTabs() {
         <ConfigFormElement title="Language:">
           <Select></Select>
         </ConfigFormElement>
+      </TabPanel>
+      <TabPanel title="Reset" value={value} index={2}>
+        <Stack direction="column" spacing={1}>
+          <ResetButton onClick={handleThemeReset}>
+            Reset theme parameters
+          </ResetButton>
+          <ResetButton onClick={handleContentReset}>
+            Reset content parameters
+          </ResetButton>
+          <ResetButton onClick={handleResetAll}>Reset all</ResetButton>
+        </Stack>
       </TabPanel>
     </Stack>
   );
