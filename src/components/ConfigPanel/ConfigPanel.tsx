@@ -21,8 +21,8 @@ function PaperComponent(props: PaperProps) {
         ref={nodeRef}
         {...props}
         sx={{
-          width: { xs: "300px", md: "600px", lg: "800px" },
-          height: { xs: "300px", lg: "400px" },
+          width: { xs: "300px", sm: "500px", md: "600px" },
+          height: { xs: "300px", sm: "350px", md: "400px" },
         }}
       />
     </Draggable>
