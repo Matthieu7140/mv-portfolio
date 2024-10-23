@@ -1,4 +1,4 @@
-import SettingsRounded from "@mui/icons-material/SettingsRounded";
+import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import { IconButton, Typography } from "@mui/material";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
@@ -21,8 +21,8 @@ function PaperComponent(props: PaperProps) {
         ref={nodeRef}
         {...props}
         sx={{
-          width: { xs: "300px", md: "600px", lg: "800px" },
-          height: { xs: "300px", lg: "400px" },
+          width: { xs: "300px", sm: "500px", md: "600px" },
+          height: { xs: "300px", sm: "350px", md: "400px" },
         }}
       />
     </Draggable>
@@ -42,7 +42,7 @@ export default function ConfigPanel() {
   return (
     <React.Fragment>
       <IconButton onClick={handleClickOpen}>
-        <SettingsRounded />
+        <SettingsRoundedIcon />
       </IconButton>
       <Dialog
         open={open}
@@ -55,7 +55,11 @@ export default function ConfigPanel() {
             Configuration panel
           </Typography>
         </DialogTitle>
-        <DialogContent>
+        <DialogContent
+          sx={{
+            pl: 1,
+          }}
+        >
           <Tabs />
         </DialogContent>
       </Dialog>

@@ -1,3 +1,5 @@
+import FormatPaintRoundedIcon from "@mui/icons-material/FormatPaintRounded";
+import FormatQuoteRoundedIcon from "@mui/icons-material/FormatQuoteRounded";
 import {
   FormControl,
   MenuItem,
@@ -9,6 +11,7 @@ import {
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
+import { styled } from "@mui/system";
 import * as React from "react";
 import { useTheme } from "../../contexts/ThemeContext";
 
@@ -37,7 +40,9 @@ function TabPanel(props: TabPanelProps) {
         <Stack
           direction="column"
           spacing={2}
-          sx={{ pt: 1, pr: 3, pb: 3, pl: 3 }}
+          sx={{
+            pt: 1,
+          }}
         >
           <Typography variant="h4">{title}</Typography>
           <FormControl>
@@ -66,6 +71,11 @@ function ConfigFormElement(props: ConfigFormElementProps) {
   );
 }
 
+const CustomTab = styled(Tab)({
+  borderTopLeftRadius: 5,
+  borderBottomLeftRadius: 5,
+});
+
 function a11yProps(index: number) {
   return {
     id: `vertical-tab-${index}`,
@@ -86,7 +96,7 @@ export default function VerticalTabs() {
   };
 
   return (
-    <Stack direction="row" width="100%" height="100%">
+    <Stack direction="row" spacing={3} width="100%" height="100%">
       <Tabs
         orientation="vertical"
         variant="scrollable"
@@ -94,8 +104,16 @@ export default function VerticalTabs() {
         onChange={handleChange}
         sx={{ borderRight: 1, borderColor: "divider", minWidth: "fit-content" }}
       >
-        <Tab label="Theme" {...a11yProps(0)} />
-        <Tab label="Content" {...a11yProps(1)} />
+        <CustomTab
+          icon={<FormatPaintRoundedIcon />}
+          label="Theme"
+          {...a11yProps(0)}
+        />
+        <CustomTab
+          icon={<FormatQuoteRoundedIcon />}
+          label="Content"
+          {...a11yProps(1)}
+        />
       </Tabs>
       <TabPanel title="Theme" value={value} index={0}>
         <ConfigFormElement title="Mode:">
