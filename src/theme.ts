@@ -13,8 +13,17 @@ const global = {
       fontFamily: "DelaGothicOne",
       fontSize: 48,
     },
+    h2: {
+      fontSize: 40,
+    },
     h3: {
       fontSize: 30,
+    },
+    h4: {
+      fontSize: 20,
+    },
+    h5: {
+      fontSize: 16,
     },
     subtitle1: {
       fontFamily: "Marcellus",
