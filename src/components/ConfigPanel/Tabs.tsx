@@ -72,6 +72,7 @@ function ConfigFormElement(props: ConfigFormElementProps) {
 const CustomTab = styled(Tab)({
   borderTopLeftRadius: 5,
   borderBottomLeftRadius: 5,
+  textTransform: "none",
 });
 
 function a11yProps(index: number) {
@@ -104,7 +105,16 @@ export default function VerticalTabs() {
         variant="scrollable"
         value={value}
         onChange={handleTabChange}
-        sx={{ borderRight: 1, borderColor: "divider", minWidth: "fit-content" }}
+        sx={{
+          borderRight: 1,
+          borderColor: "divider",
+          minWidth: "fit-content",
+          "& .MuiTabs-indicator": {
+            width: "3px",
+            borderTopLeftRadius: 3,
+            borderBottomLeftRadius: 3,
+          },
+        }}
       >
         <CustomTab
           icon={<FormatPaintRoundedIcon />}
