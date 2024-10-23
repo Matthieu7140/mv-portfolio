@@ -118,7 +118,7 @@ export default function VerticalTabs() {
       <TabPanel title="Theme" value={value} index={0}>
         <ConfigFormElement title="Mode:">
           <Select value={theme} onChange={handleThemeChange}>
-            <MenuItem value="system">System</MenuItem>
+            <MenuItem value="system">System (default)</MenuItem>
             <MenuItem value="light">Light</MenuItem>
             <MenuItem value="dark">Dark</MenuItem>
           </Select>
