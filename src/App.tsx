@@ -1,6 +1,6 @@
 import { Box, Link, Stack, Typography } from "@mui/material";
 import React, { useEffect } from "react";
-import ConfigPanel from "./components/ConfigPanel";
+import ConfigPanel from "./components/ConfigPanel/ConfigPanel";
 import { useTitle } from "./contexts/TitleContext";
 
 export default function Index() {

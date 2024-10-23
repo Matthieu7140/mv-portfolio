@@ -1,19 +1,12 @@
 import SettingsRounded from "@mui/icons-material/SettingsRounded";
-import {
-  FormControl,
-  IconButton,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-} from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import Paper, { PaperProps } from "@mui/material/Paper";
 import * as React from "react";
 import Draggable from "react-draggable";
-import { useTheme } from "../contexts/ThemeContext";
+import Tabs from "./Tabs";
 
 function PaperComponent(props: PaperProps) {
   const nodeRef = React.useRef(null);
@@ -28,7 +21,8 @@ function PaperComponent(props: PaperProps) {
         ref={nodeRef}
         {...props}
         sx={{
-          width: "50vw",
+          width: { xs: "300px", md: "600px", lg: "800px" },
+          height: { xs: "300px", lg: "400px" },
         }}
       />
     </Draggable>
@@ -37,18 +31,12 @@ function PaperComponent(props: PaperProps) {
 
 export default function ConfigPanel() {
   const [open, setOpen] = React.useState(false);
-  const { theme, setTheme } = useTheme();
 
   const handleClickOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
-  };
-
-  // Theme zone
-  const handleThemeChange = (e: SelectChangeEvent<string>) => {
-    setTheme(e.target.value);
   };
 
   return (
@@ -63,17 +51,12 @@ export default function ConfigPanel() {
         aria-labelledby="draggable-dialog-title"
       >
         <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
-          Configuration panel
+          <Typography variant="h4" component="p">
+            Configuration panel
+          </Typography>
         </DialogTitle>
         <DialogContent>
-          <FormControl fullWidth>
-            <InputLabel>Theme</InputLabel>
-            <Select value={theme} onChange={handleThemeChange}>
-              <MenuItem value="system">System</MenuItem>
-              <MenuItem value="light">Light</MenuItem>
-              <MenuItem value="dark">Dark</MenuItem>
-            </Select>
-          </FormControl>
+          <Tabs />
         </DialogContent>
       </Dialog>
     </React.Fragment>
