@@ -1,4 +1,4 @@
-import SettingsRounded from "@mui/icons-material/SettingsRounded";
+import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import { IconButton, Typography } from "@mui/material";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
@@ -42,7 +42,7 @@ export default function ConfigPanel() {
   return (
     <React.Fragment>
       <IconButton onClick={handleClickOpen}>
-        <SettingsRounded />
+        <SettingsRoundedIcon />
       </IconButton>
       <Dialog
         open={open}
