@@ -45,11 +45,9 @@ function TabPanel(props: TabPanelProps) {
           }}
         >
           <Typography variant="h4">{title}</Typography>
-          <FormControl>
-            <Stack direction="column" spacing={2}>
-              {children}
-            </Stack>
-          </FormControl>
+          <Stack direction="column" spacing={2}>
+            {children}
+          </Stack>
         </Stack>
       )}
     </Box>
@@ -66,7 +64,7 @@ function ConfigFormElement(props: ConfigFormElementProps) {
   return (
     <Stack direction="column" spacing={1} {...other}>
       <Typography variant="h5">{title}</Typography>
-      {children}
+      <FormControl>{children}</FormControl>
     </Stack>
   );
 }
@@ -87,7 +85,7 @@ export default function VerticalTabs() {
   const [value, setValue] = React.useState(0);
   const { theme, setTheme } = useTheme();
 
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
+  const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
@@ -95,13 +93,17 @@ export default function VerticalTabs() {
     setTheme(e.target.value);
   };
 
+  //   const handleAccentChange = (e: SelectChangeEvent<string>) => {};
+
+  const handleLanguageChange = (e: SelectChangeEvent<string>) => {};
+
   return (
     <Stack direction="row" spacing={3} width="100%" height="100%">
       <Tabs
         orientation="vertical"
         variant="scrollable"
         value={value}
-        onChange={handleChange}
+        onChange={handleTabChange}
         sx={{ borderRight: 1, borderColor: "divider", minWidth: "fit-content" }}
       >
         <CustomTab
@@ -123,9 +125,16 @@ export default function VerticalTabs() {
             <MenuItem value="dark">Dark</MenuItem>
           </Select>
         </ConfigFormElement>
+        <ConfigFormElement title="Accent:">
+          <Select value="default">
+            <MenuItem value="default">Default</MenuItem>
+          </Select>
+        </ConfigFormElement>
       </TabPanel>
       <TabPanel title="Content" value={value} index={1}>
-        Coming soon...
+        <ConfigFormElement title="Language:">
+          <Select></Select>
+        </ConfigFormElement>
       </TabPanel>
     </Stack>
   );
