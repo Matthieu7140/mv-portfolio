@@ -55,7 +55,11 @@ export default function ConfigPanel() {
             Configuration panel
           </Typography>
         </DialogTitle>
-        <DialogContent>
+        <DialogContent
+          sx={{
+            pl: 1,
+          }}
+        >
           <Tabs />
         </DialogContent>
       </Dialog>

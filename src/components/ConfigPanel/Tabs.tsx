@@ -37,7 +37,9 @@ function TabPanel(props: TabPanelProps) {
         <Stack
           direction="column"
           spacing={2}
-          sx={{ pt: 1, pr: 3, pb: 3, pl: 3 }}
+          sx={{
+            pt: 1,
+          }}
         >
           <Typography variant="h4">{title}</Typography>
           <FormControl>
@@ -86,7 +88,7 @@ export default function VerticalTabs() {
   };
 
   return (
-    <Stack direction="row" width="100%" height="100%">
+    <Stack direction="row" spacing={3} width="100%" height="100%">
       <Tabs
         orientation="vertical"
         variant="scrollable"
