@@ -62,8 +62,8 @@ export default function ConfigPanel() {
         <DialogTitle
           id="draggable-dialog-title"
           sx={{
-            cursor: "grab",
-            "&:active": { cursor: "grabbing" },
+            cursor: { xs: "unset", md: "grab" },
+            "&:active": { cursor: { xs: "unset", md: "grabbing" } },
           }}
         >
           <Stack
