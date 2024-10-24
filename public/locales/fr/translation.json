@@ -27,7 +27,7 @@
         "title": "Contenu",
         "language": {
           "title": "Langue :",
-          "default": "(navigateur)"
+          "default": "(par défaut)"
         }
       },
       "reset": {

@@ -59,7 +59,13 @@ export default function ConfigPanel() {
         PaperComponent={PaperComponent}
         aria-labelledby="draggable-dialog-title"
       >
-        <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
+        <DialogTitle
+          id="draggable-dialog-title"
+          sx={{
+            cursor: "grab",
+            "&:active": { cursor: "grabbing" },
+          }}
+        >
           <Stack
             direction="row"
             justifyContent="space-between"
