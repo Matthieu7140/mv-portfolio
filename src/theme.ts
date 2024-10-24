@@ -70,6 +70,7 @@ export const light = createTheme(
       cssVariables: true,
       palette: {
         mode: "light",
+        divider: "rgba(0, 0, 0, 0.08)",
       },
     },
     global
@@ -82,6 +83,7 @@ export const dark = createTheme(
       cssVariables: true,
       palette: {
         mode: "dark",
+        divider: "rgba(255, 255, 255, 0.08)",
         background: {
           default: "#001428",
         },

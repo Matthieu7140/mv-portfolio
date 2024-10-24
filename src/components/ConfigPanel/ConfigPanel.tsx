@@ -6,6 +6,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Paper, { PaperProps } from "@mui/material/Paper";
 import * as React from "react";
 import Draggable from "react-draggable";
+import { useTranslation } from "react-i18next";
 import Tabs from "./Tabs";
 
 function PaperComponent(props: PaperProps) {
@@ -31,6 +32,9 @@ function PaperComponent(props: PaperProps) {
 
 export default function ConfigPanel() {
   const [open, setOpen] = React.useState(false);
+  const { t } = useTranslation("translation", {
+    keyPrefix: "other.configPanel",
+  });
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -52,7 +56,7 @@ export default function ConfigPanel() {
       >
         <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
           <Typography variant="h4" component="p">
-            Configuration panel
+            {t("title")}
           </Typography>
         </DialogTitle>
         <DialogContent

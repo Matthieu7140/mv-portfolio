@@ -1,6 +1,8 @@
 import FormatPaintRoundedIcon from "@mui/icons-material/FormatPaintRounded";
 import FormatQuoteRoundedIcon from "@mui/icons-material/FormatQuoteRounded";
+import RestartAltRoundedIcon from "@mui/icons-material/RestartAltRounded";
 import {
+  Button,
   FormControl,
   MenuItem,
   Select,
@@ -13,7 +15,9 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import { styled } from "@mui/system";
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "../../contexts/ThemeContext";
+import { locales } from "../../locales";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -45,11 +49,9 @@ function TabPanel(props: TabPanelProps) {
           }}
         >
           <Typography variant="h4">{title}</Typography>
-          <FormControl>
-            <Stack direction="column" spacing={2}>
-              {children}
-            </Stack>
-          </FormControl>
+          <Stack direction="column" spacing={2}>
+            {children}
+          </Stack>
         </Stack>
       )}
     </Box>
@@ -66,7 +68,7 @@ function ConfigFormElement(props: ConfigFormElementProps) {
   return (
     <Stack direction="column" spacing={1} {...other}>
       <Typography variant="h5">{title}</Typography>
-      {children}
+      <FormControl>{children}</FormControl>
     </Stack>
   );
 }
@@ -74,6 +76,11 @@ function ConfigFormElement(props: ConfigFormElementProps) {
 const CustomTab = styled(Tab)({
   borderTopLeftRadius: 5,
   borderBottomLeftRadius: 5,
+  textTransform: "none",
+});
+
+const ResetButton = styled(Button)({
+  width: "fit-content",
 });
 
 function a11yProps(index: number) {
@@ -86,13 +93,35 @@ function a11yProps(index: number) {
 export default function VerticalTabs() {
   const [value, setValue] = React.useState(0);
   const { theme, setTheme } = useTheme();
+  const { t, i18n } = useTranslation("translation", {
+    keyPrefix: "other.configPanel",
+  });
 
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
+  const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
   const handleThemeChange = (e: SelectChangeEvent<string>) => {
     setTheme(e.target.value);
+  };
+
+  //   const handleAccentChange = (e: SelectChangeEvent<string>) => {};
+
+  const handleLanguageChange = (e: SelectChangeEvent<string>) => {
+    i18n.changeLanguage(e.target.value);
+  };
+
+  const handleThemeReset = () => {
+    setTheme("system");
+  };
+
+  const handleContentReset = () => {
+    i18n.changeLanguage(navigator?.language);
+  };
+
+  const handleResetAll = () => {
+    handleThemeReset();
+    handleContentReset();
   };
 
   return (
@@ -101,31 +130,73 @@ export default function VerticalTabs() {
         orientation="vertical"
         variant="scrollable"
         value={value}
-        onChange={handleChange}
-        sx={{ borderRight: 1, borderColor: "divider", minWidth: "fit-content" }}
+        onChange={handleTabChange}
+        sx={{
+          borderRight: 1,
+          borderColor: "divider",
+          minWidth: "fit-content",
+          "& .MuiTabs-indicator": {
+            width: "3px",
+            borderTopLeftRadius: 3,
+            borderBottomLeftRadius: 3,
+          },
+        }}
       >
         <CustomTab
           icon={<FormatPaintRoundedIcon />}
-          label="Theme"
+          label={t("theme.title")}
           {...a11yProps(0)}
         />
         <CustomTab
           icon={<FormatQuoteRoundedIcon />}
-          label="Content"
+          label={t("content.title")}
           {...a11yProps(1)}
         />
+        <CustomTab
+          icon={<RestartAltRoundedIcon />}
+          label={t("reset.title")}
+          {...a11yProps(2)}
+        />
       </Tabs>
-      <TabPanel title="Theme" value={value} index={0}>
-        <ConfigFormElement title="Mode:">
+      <TabPanel title={t("theme.title")} value={value} index={0}>
+        <ConfigFormElement title={t("theme.mode.title")}>
           <Select value={theme} onChange={handleThemeChange}>
-            <MenuItem value="system">System</MenuItem>
-            <MenuItem value="light">Light</MenuItem>
-            <MenuItem value="dark">Dark</MenuItem>
+            <MenuItem value="system">{t("theme.mode.system")}</MenuItem>
+            <MenuItem value="light">{t("theme.mode.light")}</MenuItem>
+            <MenuItem value="dark">{t("theme.mode.dark")}</MenuItem>
+          </Select>
+        </ConfigFormElement>
+        <ConfigFormElement title={t("theme.accent.title")}>
+          <Select value="default">
+            <MenuItem value="default">{t("theme.accent.default")}</MenuItem>
           </Select>
         </ConfigFormElement>
       </TabPanel>
-      <TabPanel title="Content" value={value} index={1}>
-        Coming soon...
+      <TabPanel title={t("content.title")} value={value} index={1}>
+        <ConfigFormElement title={t("content.language.title")}>
+          <Select value={i18n.resolvedLanguage} onChange={handleLanguageChange}>
+            {locales.map((language, index) => (
+              <MenuItem key={index} value={language.key}>
+                {`${language.title} ${
+                  navigator.language.includes(language.key)
+                    ? t("content.language.default")
+                    : ""
+                }`}
+              </MenuItem>
+            ))}
+          </Select>
+        </ConfigFormElement>
+      </TabPanel>
+      <TabPanel title={t("reset.title")} value={value} index={2}>
+        <Stack direction="column" spacing={1}>
+          <ResetButton onClick={handleThemeReset}>
+            {t("reset.themeParameters")}
+          </ResetButton>
+          <ResetButton onClick={handleContentReset}>
+            {t("reset.contentParameters")}
+          </ResetButton>
+          <ResetButton onClick={handleResetAll}>{t("reset.all")}</ResetButton>
+        </Stack>
       </TabPanel>
     </Stack>
   );
