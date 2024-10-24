@@ -18,7 +18,9 @@
         },
         "accent": {
           "title": "Couleur d'accentuation :",
-          "default": "Défaut"
+          "blue": "Bleu (par défaut)",
+          "orange": "Orange",
+          "pink": "Rose"
         }
       },
       "content": {
