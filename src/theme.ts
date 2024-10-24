@@ -1,12 +1,5 @@
-import { createTheme } from "@mui/material";
-import { deepmerge } from "@mui/utils";
-
-const global = {
-  palette: {
-    primary: {
-      main: "#007FFF",
-    },
-  },
+// Global theme definition
+export const global = {
   shape: {
     borderRadius: 8,
   },
@@ -64,31 +57,44 @@ const global = {
   },
 };
 
-export const light = createTheme(
-  deepmerge(
-    {
-      cssVariables: true,
-      palette: {
-        mode: "light",
-        divider: "rgba(0, 0, 0, 0.08)",
-      },
+// Light mode and dark mode definition
+export const light = {
+  palette: {
+    mode: "light",
+    divider: "rgba(0, 0, 0, 0.08)",
+  },
+};
+export const dark = {
+  palette: {
+    mode: "dark",
+    divider: "rgba(255, 255, 255, 0.08)",
+    background: {
+      default: "#001428",
     },
-    global
-  )
-);
+  },
+};
 
-export const dark = createTheme(
-  deepmerge(
-    {
-      cssVariables: true,
-      palette: {
-        mode: "dark",
-        divider: "rgba(255, 255, 255, 0.08)",
-        background: {
-          default: "#001428",
-        },
+// Accent colors definition
+export const accentColors = {
+  blue: {
+    palette: {
+      primary: {
+        main: "#007FFF",
       },
     },
-    global
-  )
-);
+  },
+  orange: {
+    palette: {
+      primary: {
+        main: "#ff4400",
+      },
+    },
+  },
+  pink: {
+    palette: {
+      primary: {
+        main: "#d60bd3",
+      },
+    },
+  },
+};

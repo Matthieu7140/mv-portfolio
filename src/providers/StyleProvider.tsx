@@ -1,6 +1,10 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
+import { deepmerge } from "@mui/utils";
+import React from "react";
+import { useAccentColor } from "../contexts/AccentColorContext";
 import { useTheme } from "../contexts/ThemeContext";
-import { dark, light } from "../theme";
+import { accentColors, dark, global, light } from "../theme";
 
 export default function StyleProvider({
   children,
@@ -14,9 +18,25 @@ export default function StyleProvider({
       : theme === "light"
       ? false
       : true;
+  const { accentColor } = useAccentColor();
+
+  // Building theme based on user preferences
+  const resolvedTheme = !darkMode
+    ? createTheme(
+        deepmerge(
+          deepmerge(global, light),
+          accentColors[accentColor as keyof typeof accentColors]
+        )
+      )
+    : createTheme(
+        deepmerge(
+          deepmerge(global, dark),
+          accentColors[accentColor as keyof typeof accentColors]
+        )
+      );
 
   return (
-    <ThemeProvider theme={!darkMode ? light : dark}>
+    <ThemeProvider theme={resolvedTheme}>
       <CssBaseline />
       {children}
     </ThemeProvider>

@@ -16,8 +16,10 @@ import Tabs from "@mui/material/Tabs";
 import { styled } from "@mui/system";
 import * as React from "react";
 import { useTranslation } from "react-i18next";
+import { useAccentColor } from "../../contexts/AccentColorContext";
 import { useTheme } from "../../contexts/ThemeContext";
 import { locales } from "../../locales";
+import { accentColors } from "../../theme";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -93,6 +95,7 @@ function a11yProps(index: number) {
 export default function VerticalTabs() {
   const [value, setValue] = React.useState(0);
   const { theme, setTheme } = useTheme();
+  const { accentColor, setAccentColor } = useAccentColor();
   const { t, i18n } = useTranslation("translation", {
     keyPrefix: "other.configPanel",
   });
@@ -105,7 +108,9 @@ export default function VerticalTabs() {
     setTheme(e.target.value);
   };
 
-  //   const handleAccentChange = (e: SelectChangeEvent<string>) => {};
+  const handleAccentChange = (e: SelectChangeEvent<string>) => {
+    setAccentColor(e.target.value);
+  };
 
   const handleLanguageChange = (e: SelectChangeEvent<string>) => {
     i18n.changeLanguage(e.target.value);
@@ -113,6 +118,7 @@ export default function VerticalTabs() {
 
   const handleThemeReset = () => {
     setTheme("system");
+    setAccentColor("blue");
   };
 
   const handleContentReset = () => {
@@ -167,8 +173,12 @@ export default function VerticalTabs() {
           </Select>
         </ConfigFormElement>
         <ConfigFormElement title={t("theme.accent.title")}>
-          <Select value="default">
-            <MenuItem value="default">{t("theme.accent.default")}</MenuItem>
+          <Select value={accentColor} onChange={handleAccentChange}>
+            {Object.keys(accentColors).map((color, index) => (
+              <MenuItem key={index} value={color}>
+                {t(`theme.accent.${color}`)}
+              </MenuItem>
+            ))}
           </Select>
         </ConfigFormElement>
       </TabPanel>

@@ -18,7 +18,9 @@
         },
         "accent": {
           "title": "Accent color:",
-          "default": "Default"
+          "blue": "Blue (default)",
+          "orange": "Orange",
+          "pink": "Pink"
         }
       },
       "content": {
