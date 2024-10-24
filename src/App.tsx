@@ -1,14 +1,16 @@
 import { Box, Link, Stack, Typography } from "@mui/material";
 import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import ConfigPanel from "./components/ConfigPanel/ConfigPanel";
 import { useTitle } from "./contexts/TitleContext";
 
 export default function Index() {
   const { setTitle } = useTitle();
+  const { t, i18n } = useTranslation("translation", { keyPrefix: "landing" });
 
   useEffect(() => {
-    setTitle("Home");
-  }, []);
+    setTitle(t("tabTitle"));
+  }, [i18n.resolvedLanguage]);
 
   return (
     <React.Fragment>
@@ -36,7 +38,7 @@ export default function Index() {
             textAlign: "center",
           }}
         >
-          Welcome to my portfolio 🚧
+          {t("title")}
         </Typography>
         <Typography
           variant="subtitle1"
@@ -44,15 +46,14 @@ export default function Index() {
             textAlign: "center",
           }}
         >
-          As you can see, I am still building my online portfolio. Expect to see
-          it live soon!
+          {t("subtitle")}
         </Typography>
         <Link
           target="_blank"
           href="https://github.com/Matthieu7140/mv-portfolio"
           rel="noopener"
         >
-          See the public repository
+          {t("gitHub")}
         </Link>
       </Stack>
     </React.Fragment>

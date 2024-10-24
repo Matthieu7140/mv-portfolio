@@ -15,7 +15,9 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import { styled } from "@mui/system";
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "../../contexts/ThemeContext";
+import { locales } from "../../locales";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -91,6 +93,9 @@ function a11yProps(index: number) {
 export default function VerticalTabs() {
   const [value, setValue] = React.useState(0);
   const { theme, setTheme } = useTheme();
+  const { t, i18n } = useTranslation("translation", {
+    keyPrefix: "other.configPanel",
+  });
 
   const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -102,13 +107,17 @@ export default function VerticalTabs() {
 
   //   const handleAccentChange = (e: SelectChangeEvent<string>) => {};
 
-  const handleLanguageChange = (e: SelectChangeEvent<string>) => {};
+  const handleLanguageChange = (e: SelectChangeEvent<string>) => {
+    i18n.changeLanguage(e.target.value);
+  };
 
   const handleThemeReset = () => {
     setTheme("system");
   };
 
-  const handleContentReset = () => {};
+  const handleContentReset = () => {
+    i18n.changeLanguage(navigator?.language);
+  };
 
   const handleResetAll = () => {
     handleThemeReset();
@@ -135,48 +144,58 @@ export default function VerticalTabs() {
       >
         <CustomTab
           icon={<FormatPaintRoundedIcon />}
-          label="Theme"
+          label={t("theme.title")}
           {...a11yProps(0)}
         />
         <CustomTab
           icon={<FormatQuoteRoundedIcon />}
-          label="Content"
+          label={t("content.title")}
           {...a11yProps(1)}
         />
         <CustomTab
           icon={<RestartAltRoundedIcon />}
-          label="Reset"
+          label={t("reset.title")}
           {...a11yProps(2)}
         />
       </Tabs>
-      <TabPanel title="Theme" value={value} index={0}>
-        <ConfigFormElement title="Mode:">
+      <TabPanel title={t("theme.title")} value={value} index={0}>
+        <ConfigFormElement title={t("theme.mode.title")}>
           <Select value={theme} onChange={handleThemeChange}>
-            <MenuItem value="system">System (default)</MenuItem>
-            <MenuItem value="light">Light</MenuItem>
-            <MenuItem value="dark">Dark</MenuItem>
+            <MenuItem value="system">{t("theme.mode.system")}</MenuItem>
+            <MenuItem value="light">{t("theme.mode.light")}</MenuItem>
+            <MenuItem value="dark">{t("theme.mode.dark")}</MenuItem>
           </Select>
         </ConfigFormElement>
-        <ConfigFormElement title="Accent:">
+        <ConfigFormElement title={t("theme.accent.title")}>
           <Select value="default">
-            <MenuItem value="default">Default</MenuItem>
+            <MenuItem value="default">{t("theme.accent.default")}</MenuItem>
           </Select>
         </ConfigFormElement>
       </TabPanel>
-      <TabPanel title="Content" value={value} index={1}>
-        <ConfigFormElement title="Language:">
-          <Select></Select>
+      <TabPanel title={t("content.title")} value={value} index={1}>
+        <ConfigFormElement title={t("content.language.title")}>
+          <Select value={i18n.resolvedLanguage} onChange={handleLanguageChange}>
+            {locales.map((language, index) => (
+              <MenuItem key={index} value={language.key}>
+                {`${language.title} ${
+                  navigator.language.includes(language.key)
+                    ? t("content.language.default")
+                    : ""
+                }`}
+              </MenuItem>
+            ))}
+          </Select>
         </ConfigFormElement>
       </TabPanel>
-      <TabPanel title="Reset" value={value} index={2}>
+      <TabPanel title={t("reset.title")} value={value} index={2}>
         <Stack direction="column" spacing={1}>
           <ResetButton onClick={handleThemeReset}>
-            Reset theme parameters
+            {t("reset.themeParameters")}
           </ResetButton>
           <ResetButton onClick={handleContentReset}>
-            Reset content parameters
+            {t("reset.contentParameters")}
           </ResetButton>
-          <ResetButton onClick={handleResetAll}>Reset all</ResetButton>
+          <ResetButton onClick={handleResetAll}>{t("reset.all")}</ResetButton>
         </Stack>
       </TabPanel>
     </Stack>

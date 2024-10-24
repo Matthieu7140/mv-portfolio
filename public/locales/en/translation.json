@@ -1,0 +1,39 @@
+{
+  "landing": {
+    "tabTitle": "Home",
+    "title": "Welcome to my portfolio 🚧",
+    "subtitle": "As you can see, I am still building my online portfolio. Expect to see it live soon!",
+    "gitHub": "See the public repository"
+  },
+  "other": {
+    "configPanel": {
+      "title": "Configuration panel",
+      "theme": {
+        "title": "Theme",
+        "mode": {
+          "title": "Mode:",
+          "system": "System (default)",
+          "light": "Light",
+          "dark": "Dark"
+        },
+        "accent": {
+          "title": "Accent color:",
+          "default": "Default"
+        }
+      },
+      "content": {
+        "title": "Content",
+        "language": {
+          "title": "Language:",
+          "default": "(browser)"
+        }
+      },
+      "reset": {
+        "title": "Reset",
+        "themeParameters": "Reset theme parameters",
+        "contentParameters": "Reset content parameters",
+        "all": "Reset all"
+      }
+    }
+  }
+}
