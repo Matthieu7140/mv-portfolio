@@ -5,7 +5,7 @@ import { Stack, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
-import { styled } from "@mui/system";
+import { styled, useMediaQuery, useTheme } from "@mui/system";
 import * as React from "react";
 import { useTranslation } from "react-i18next";
 import ContentConfig from "./ContentConfig";
@@ -69,6 +69,8 @@ export default function VerticalTabs() {
   const { t } = useTranslation("translation", {
     keyPrefix: "other.configPanel",
   });
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -85,6 +87,9 @@ export default function VerticalTabs() {
           borderRight: 1,
           borderColor: "divider",
           minWidth: "fit-content",
+          "& .MuiTab-root": {
+            minWidth: "unset",
+          },
           "& .MuiTabs-indicator": {
             width: "3px",
             borderTopLeftRadius: 3,
@@ -94,17 +99,17 @@ export default function VerticalTabs() {
       >
         <CustomTab
           icon={<FormatPaintRoundedIcon />}
-          label={t("theme.title")}
+          label={mobile ? undefined : t("theme.title")}
           {...a11yProps(0)}
         />
         <CustomTab
           icon={<FormatQuoteRoundedIcon />}
-          label={t("content.title")}
+          label={mobile ? undefined : t("content.title")}
           {...a11yProps(1)}
         />
         <CustomTab
           icon={<RestartAltRoundedIcon />}
-          label={t("reset.title")}
+          label={mobile ? undefined : t("reset.title")}
           {...a11yProps(2)}
         />
       </Tabs>

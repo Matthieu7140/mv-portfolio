@@ -7,6 +7,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 
 const ResetButton = styled(Button)({
   width: "fit-content",
+  textAlign: "left",
 });
 
 export default function ResetSection() {
