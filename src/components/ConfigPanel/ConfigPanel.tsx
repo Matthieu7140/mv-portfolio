@@ -1,5 +1,6 @@
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
-import { IconButton, Typography } from "@mui/material";
+import { IconButton, Stack, Typography } from "@mui/material";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -59,9 +60,18 @@ export default function ConfigPanel() {
         aria-labelledby="draggable-dialog-title"
       >
         <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
-          <Typography variant="h4" component="p">
-            {t("title")}
-          </Typography>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Typography variant="h4" component="p">
+              {t("title")}
+            </Typography>
+            <IconButton onClick={handleClose}>
+              <CloseRoundedIcon />
+            </IconButton>
+          </Stack>
         </DialogTitle>
         <DialogContent
           sx={{
