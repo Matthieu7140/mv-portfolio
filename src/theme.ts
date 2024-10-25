@@ -1,5 +1,6 @@
 // Global theme definition
 export const global = {
+  cssVariables: true,
   shape: {
     borderRadius: 8,
   },
@@ -26,6 +27,26 @@ export const global = {
     },
   },
   components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          borderRadius: 4,
+          textDecoration: "none",
+          position: "relative",
+          "&:hover::before": {
+            content: "''",
+            position: "absolute",
+            top: 0,
+            left: -5,
+            right: -5,
+            height: "100%",
+            backgroundColor: "var(--mui-palette-primary-main)",
+            opacity: 0.33,
+            borderRadius: 4,
+          },
+        },
+      },
+    },
     MuiCssBaseline: {
       styleOverrides: `
         @font-face {
