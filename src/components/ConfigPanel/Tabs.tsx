@@ -52,8 +52,7 @@ function TabPanel(props: TabPanelProps) {
 }
 
 const CustomTab = styled(Tab)({
-  borderTopLeftRadius: 5,
-  borderBottomLeftRadius: 5,
+  borderRadius: 5,
   textTransform: "none",
 });
 
@@ -84,16 +83,13 @@ export default function VerticalTabs() {
         value={value}
         onChange={handleTabChange}
         sx={{
-          borderRight: 1,
-          borderColor: "divider",
           minWidth: "fit-content",
           "& .MuiTab-root": {
             minWidth: "unset",
           },
           "& .MuiTabs-indicator": {
             width: "3px",
-            borderTopLeftRadius: 3,
-            borderBottomLeftRadius: 3,
+            borderRadius: 5,
           },
         }}
       >

@@ -47,6 +47,17 @@ export const global = {
         },
       },
     },
+    MuiList: {
+      styleOverrides: {
+        root: {
+          padding: 5,
+          "& > .MuiMenuItem-root": {
+            borderRadius: 4,
+            transition: ".1s all",
+          },
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
