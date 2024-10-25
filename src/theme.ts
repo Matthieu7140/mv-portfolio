@@ -27,28 +27,6 @@ export const global = {
     },
   },
   components: {
-    MuiLink: {
-      styleOverrides: {
-        root: {
-          borderRadius: 4,
-          textDecoration: "none",
-          "&:hover": {
-            position: "relative",
-          },
-          "&:hover::before": {
-            content: "''",
-            position: "absolute",
-            top: 0,
-            left: -5,
-            right: -5,
-            height: "100%",
-            backgroundColor: "var(--mui-palette-primary-main)",
-            opacity: 0.33,
-            borderRadius: 4,
-          },
-        },
-      },
-    },
     MuiList: {
       styleOverrides: {
         root: {
@@ -122,6 +100,7 @@ export const accentColors = {
     palette: {
       primary: {
         main: "#007FFF",
+        light: "#007FFF33",
       },
     },
   },
@@ -129,6 +108,7 @@ export const accentColors = {
     palette: {
       primary: {
         main: "#ff4400",
+        light: "#ff440033",
       },
     },
   },
@@ -136,6 +116,7 @@ export const accentColors = {
     palette: {
       primary: {
         main: "#e180ff",
+        light: "#e180ff33",
       },
     },
   },

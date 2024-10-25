@@ -1,7 +1,8 @@
-import { Box, Link, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import ConfigPanel from "./components/ConfigPanel/ConfigPanel";
+import CustomLink from "./components/CustomLink";
 import { useTitle } from "./contexts/TitleContext";
 
 export default function Index() {
@@ -48,13 +49,9 @@ export default function Index() {
         >
           {t("subtitle")}
         </Typography>
-        <Link
-          target="_blank"
-          href="https://github.com/Matthieu7140/mv-portfolio"
-          rel="noopener"
-        >
+        <CustomLink url="https://github.com/Matthieu7140/mv-portfolio" newTab>
           {t("gitHub")}
-        </Link>
+        </CustomLink>
       </Stack>
     </React.Fragment>
   );
