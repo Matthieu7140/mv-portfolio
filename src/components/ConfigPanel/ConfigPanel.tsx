@@ -71,7 +71,13 @@ export default function ConfigPanel() {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Typography variant="h4" component="p">
+            <Typography
+              variant="h4"
+              component="p"
+              sx={{
+                userSelect: "none",
+              }}
+            >
               {t("title")}
             </Typography>
             <IconButton onClick={handleClose}>

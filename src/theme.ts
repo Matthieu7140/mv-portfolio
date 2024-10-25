@@ -1,5 +1,6 @@
 // Global theme definition
 export const global = {
+  cssVariables: true,
   shape: {
     borderRadius: 8,
   },
@@ -26,6 +27,44 @@ export const global = {
     },
   },
   components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          borderRadius: 4,
+          textDecoration: "none",
+          position: "relative",
+          "&:hover::before": {
+            content: "''",
+            position: "absolute",
+            top: 0,
+            left: -5,
+            right: -5,
+            height: "100%",
+            backgroundColor: "var(--mui-palette-primary-main)",
+            opacity: 0.33,
+            borderRadius: 4,
+          },
+        },
+      },
+    },
+    MuiList: {
+      styleOverrides: {
+        root: {
+          padding: 5,
+          "& > .MuiMenuItem-root": {
+            borderRadius: 4,
+            transition: ".1s all",
+          },
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          width: "fit-content",
+        },
+      },
+    },
     MuiCssBaseline: {
       styleOverrides: `
         @font-face {
@@ -69,6 +108,7 @@ export const dark = {
     mode: "dark",
     divider: "rgba(255, 255, 255, 0.08)",
     background: {
+      paper: "#001121",
       default: "#001428",
     },
   },
@@ -93,7 +133,7 @@ export const accentColors = {
   pink: {
     palette: {
       primary: {
-        main: "#d60bd3",
+        main: "#e180ff",
       },
     },
   },
