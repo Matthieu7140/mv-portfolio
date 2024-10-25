@@ -25,7 +25,7 @@ export default function CustomLink(props: CustomLinkProps) {
             height: "100%",
             top: 0,
             right: -17,
-            fontSize: "13px",
+            fontSize: "12px",
           },
           "&:hover": {
             "& > .new-tab-icon": {

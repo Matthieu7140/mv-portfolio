@@ -27,6 +27,15 @@ export const global = {
     },
   },
   components: {
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          "& .MuiOutlinedInput-notchedOutline": {
+            transition: ".1s all",
+          },
+        },
+      },
+    },
     MuiList: {
       styleOverrides: {
         root: {
