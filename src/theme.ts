@@ -32,7 +32,9 @@ export const global = {
         root: {
           borderRadius: 4,
           textDecoration: "none",
-          position: "relative",
+          "&:hover": {
+            position: "relative",
+          },
           "&:hover::before": {
             content: "''",
             position: "absolute",
