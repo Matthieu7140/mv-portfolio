@@ -47,6 +47,13 @@ export const global = {
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          width: "fit-content",
+        },
+      },
+    },
     MuiCssBaseline: {
       styleOverrides: `
         @font-face {
