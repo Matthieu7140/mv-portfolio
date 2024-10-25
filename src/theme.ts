@@ -69,6 +69,7 @@ export const dark = {
     mode: "dark",
     divider: "rgba(255, 255, 255, 0.08)",
     background: {
+      paper: "#001121",
       default: "#001428",
     },
   },
@@ -93,7 +94,7 @@ export const accentColors = {
   pink: {
     palette: {
       primary: {
-        main: "#d60bd3",
+        main: "#e180ff",
       },
     },
   },
