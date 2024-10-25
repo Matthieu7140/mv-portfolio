@@ -49,7 +49,10 @@ export default function Index() {
         >
           {t("subtitle")}
         </Typography>
-        <CustomLink url="https://github.com/Matthieu7140/mv-portfolio" newTab>
+        <CustomLink
+          url="https://github.com/matthieu-vagnon/mv-portfolio"
+          newTab
+        >
           {t("gitHub")}
         </CustomLink>
       </Stack>
