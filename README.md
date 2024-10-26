@@ -66,4 +66,5 @@ The application will be available at [localhost:3000](http://localhost:3000).
 | Create home page                                | !!!      | 👨‍💻     |
 | Create projects page                            | !!!      | ❌     |
 | Create contact page                             | !!!      | ❌     |
+| Create transitions between pages                | !        | ❌     |
 | Add showcase images to this README              | !!       | ❌     |
