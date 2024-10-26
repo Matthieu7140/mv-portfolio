@@ -1,5 +1,6 @@
 - [Project informations](#project-informations)
   - [Description](#description)
+  - [Showcase images](#showcase-images)
   - [Tech stack](#tech-stack)
   - [Features](#features)
 - [Run the project](#run-the-project)
@@ -10,7 +11,11 @@
 
 ## Description
 
-This is the official repository for my personal online portfolio.
+This is the official repository for my personal online portfolio, available [here](https://mvagnon.dev/).
+
+## Showcase images
+
+Coming soon...
 
 ## Tech stack
 
@@ -44,4 +49,4 @@ npm install;
 npm run dev
 ```
 
-The application will be available at [localhost:3000](localhost:3000)
+The application will be available at [localhost:3000](http://localhost:3000)
