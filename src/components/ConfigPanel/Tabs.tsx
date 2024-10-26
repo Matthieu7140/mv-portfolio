@@ -23,13 +23,13 @@ function TabPanel(props: TabPanelProps) {
 
   return (
     <Box
-      role="tabpanel"
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
       width="100%"
       sx={{
         overflowY: "scroll",
+        pl: 3,
       }}
       {...other}
     >
@@ -76,7 +76,7 @@ export default function VerticalTabs() {
   };
 
   return (
-    <Stack direction="row" spacing={3} width="100%" height="100%">
+    <Stack direction="row" width="100%" height="100%">
       <Tabs
         orientation="vertical"
         variant="scrollable"
