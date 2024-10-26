@@ -6,6 +6,7 @@
 - [Run the project](#run-the-project)
   - [Global configuration](#global-configuration)
   - [Run the application](#run-the-application)
+- [To-do](#to-do)
 
 # Project informations
 
@@ -15,7 +16,7 @@ This is the official repository for my personal online portfolio, available [her
 
 ## Showcase images
 
-Coming soon...
+_Coming soon..._
 
 ## Tech stack
 
@@ -55,3 +56,14 @@ npm run dev
 ```
 
 The application will be available at [localhost:3000](http://localhost:3000).
+
+# To-do
+
+| Task                                                | Priority |
+| --------------------------------------------------- | -------- |
+| [x] ~~Create temporary "is building" landing page~~ | !!!      |
+| [x] ~~Create configuration panel~~                  | !        |
+| [ ] Create home page                                | !!!      |
+| [ ] Create projects page                            | !!!      |
+| [ ] Create contact page                             | !!!      |
+| [ ] Add showcase images to this README              | !!       |
