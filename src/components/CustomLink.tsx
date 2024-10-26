@@ -22,10 +22,10 @@ export default function CustomLink(props: CustomLinkProps) {
           "& > .new-tab-icon": {
             display: "none",
             position: "absolute",
-            height: "100%",
+            height: "calc(100% - 1px)",
             top: 0,
             right: -17,
-            fontSize: "12px",
+            fontSize: "13px",
           },
           "&:hover": {
             "& > .new-tab-icon": {
