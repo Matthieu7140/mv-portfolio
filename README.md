@@ -31,10 +31,15 @@ The web application was built using the following stacks:
 
 The app has the following features, designed to showcase my competences:
 
-- Home page containing main informations about my prestations and my story
-- Projects page showcasing some of my past projects and clients as well as some notices from my past clients
-- Contact page making it easy to get in touch with me
-- A configuration panel designed to configure app's theme, language, ...
+| Page     | Description                                                      |
+| -------- | ---------------------------------------------------------------- |
+| Home     | Main informations about my prestations and my story.             |
+| Projects | Showcase of some past projects as well as some clients comments. |
+| Contact  | Making it easy to get in touch with me.                          |
+
+| Functionality       | Description                          |
+| ------------------- | ------------------------------------ |
+| Configuration panel | Customize app's theme, language, ... |
 
 # Run the project
 
@@ -49,4 +54,4 @@ npm install;
 npm run dev
 ```
 
-The application will be available at [localhost:3000](http://localhost:3000)
+The application will be available at [localhost:3000](http://localhost:3000).
