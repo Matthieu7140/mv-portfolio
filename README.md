@@ -6,7 +6,7 @@
 - [Run the project](#run-the-project)
   - [Global configuration](#global-configuration)
   - [Run the application](#run-the-application)
-- [To-do](#to-do)
+- [Next steps](#next-steps)
 
 # Project informations
 
@@ -57,13 +57,13 @@ npm run dev
 
 The application will be available at [localhost:3000](http://localhost:3000).
 
-# To-do
+# Next steps
 
-| Task                                                | Priority |
-| --------------------------------------------------- | -------- |
-| [x] ~~Create temporary "is building" landing page~~ | !!!      |
-| [x] ~~Create configuration panel~~                  | !        |
-| [ ] Create home page                                | !!!      |
-| [ ] Create projects page                            | !!!      |
-| [ ] Create contact page                             | !!!      |
-| [ ] Add showcase images to this README              | !!       |
+| Task                                            | Priority | Status |
+| ----------------------------------------------- | -------- | ------ |
+| ~~Create temporary "is building" landing page~~ | !!!      | ✅     |
+| ~~Create configuration panel~~                  | !        | ✅     |
+| Create home page                                | !!!      | 👨‍💻     |
+| Create projects page                            | !!!      | ❌     |
+| Create contact page                             | !!!      | ❌     |
+| Add showcase images to this README              | !!       | ❌     |
