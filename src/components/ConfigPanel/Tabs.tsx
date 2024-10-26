@@ -84,6 +84,9 @@ export default function VerticalTabs() {
         onChange={handleTabChange}
         sx={{
           minWidth: "fit-content",
+          "& .MuiTabs-scroller": {
+            pr: 1,
+          },
           "& .MuiTab-root": {
             minWidth: "unset",
           },
