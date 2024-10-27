@@ -6,7 +6,7 @@
 - [Run the project](#run-the-project)
   - [Global configuration](#global-configuration)
   - [Run the application](#run-the-application)
-- [Next steps](#next-steps)
+- [Roadmap](#roadmap)
 
 # Project informations
 
@@ -57,7 +57,7 @@ npm run dev
 
 The application will be available at [localhost:3000](http://localhost:3000).
 
-# Next steps
+# Roadmap
 
 | Task                                            | Priority | Status |
 | ----------------------------------------------- | -------- | ------ |
