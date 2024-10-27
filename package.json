@@ -1,5 +1,8 @@
 {
   "name": "portfolio",
+  "title": "Portfolio",
+  "client": "M. Vagnon",
+  "author": "M. Vagnon",
   "private": true,
   "version": "0.0.0",
   "type": "module",
