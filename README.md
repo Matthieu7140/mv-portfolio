@@ -4,7 +4,6 @@
   - [Tech stack](#tech-stack)
   - [Features](#features)
 - [Run the project](#run-the-project)
-  - [Global configuration](#global-configuration)
   - [Dependencies install/update](#dependencies-installupdate)
   - [Run the application](#run-the-application)
 - [Deployment](#deployment)
@@ -52,10 +51,6 @@ The app has the following features, designed to showcase my competences:
 | Configuration panel | Customize app's theme, language, ... |
 
 # Run the project
-
-## Global configuration
-
-Nothing to do at the moment.
 
 ## Dependencies install/update
 
