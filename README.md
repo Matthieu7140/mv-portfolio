@@ -29,13 +29,13 @@ This is the official repository for my personal online portfolio, available [her
 
 ## Tech stack
 
-The web application was built using the following stacks:
+This web application was built using the following tools:
 
 - React.js
 - TypeScript
 - Vite.js
-- Material UI
 - React Router
+- Material UI
 
 ## Features
 
