@@ -5,6 +5,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
+import Package from "../../package.json";
 
 type TitleContextType = {
   title: string;
@@ -22,7 +23,7 @@ export default function TitleProvider({ children }: TitleProviderProps) {
   const [title, setTitle] = useState("");
 
   useEffect(() => {
-    document.title = `M. Vagnon • ${title}`;
+    document.title = `${Package.title} • ${title}`;
   }, [title]);
 
   return (
