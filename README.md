@@ -5,6 +5,7 @@
   - [Features](#features)
 - [Run the project](#run-the-project)
   - [Global configuration](#global-configuration)
+  - [Dependencies install/update](#dependencies-installupdate)
   - [Run the application](#run-the-application)
 - [Roadmap](#roadmap)
 
@@ -48,10 +49,19 @@ The app has the following features, designed to showcase my competences:
 
 Nothing to do at the moment.
 
-## Run the application
+## Dependencies install/update
+
+Run the following command:
 
 ```
-npm install;
+npm install
+```
+
+## Run the application
+
+Run the following command:
+
+```
 npm run dev
 ```
 
