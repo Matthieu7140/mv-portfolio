@@ -1,3 +1,6 @@
+# Table of contents
+
+- [Table of contents](#table-of-contents)
 - [Roadmap](#roadmap)
 - [Project informations](#project-informations)
   - [Description](#description)
