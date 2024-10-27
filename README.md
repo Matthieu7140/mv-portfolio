@@ -1,7 +1,6 @@
 - [Roadmap](#roadmap)
 - [Project informations](#project-informations)
   - [Description](#description)
-  - [Showcase images](#showcase-images)
   - [Tech stack](#tech-stack)
   - [Features](#features)
 - [Run the project](#run-the-project)
@@ -21,17 +20,12 @@
 | Create projects page                            | !!!      | ❌     |
 | Create contact page                             | !!!      | ❌     |
 | Create transitions between pages                | !        | ❌     |
-| Add showcase images to this README              | !!       | ❌     |
 
 # Project informations
 
 ## Description
 
 This is the official repository for my personal online portfolio, available [here](https://mvagnon.dev/).
-
-## Showcase images
-
-_Coming soon..._
 
 ## Tech stack
 
