@@ -1,3 +1,4 @@
+- [Roadmap](#roadmap)
 - [Project informations](#project-informations)
   - [Description](#description)
   - [Showcase images](#showcase-images)
@@ -7,7 +8,20 @@
   - [Global configuration](#global-configuration)
   - [Dependencies install/update](#dependencies-installupdate)
   - [Run the application](#run-the-application)
-- [Roadmap](#roadmap)
+- [Deployment](#deployment)
+  - [Build the application](#build-the-application)
+
+# Roadmap
+
+| Task                                            | Priority | Status |
+| ----------------------------------------------- | -------- | ------ |
+| ~~Create temporary "is building" landing page~~ | !!!      | ✅     |
+| ~~Create configuration panel~~                  | !        | ✅     |
+| Create home page                                | !!!      | 👨‍💻     |
+| Create projects page                            | !!!      | ❌     |
+| Create contact page                             | !!!      | ❌     |
+| Create transitions between pages                | !        | ❌     |
+| Add showcase images to this README              | !!       | ❌     |
 
 # Project informations
 
@@ -67,14 +81,14 @@ npm run dev
 
 The application will be available at [localhost:3000](http://localhost:3000).
 
-# Roadmap
+# Deployment
 
-| Task                                            | Priority | Status |
-| ----------------------------------------------- | -------- | ------ |
-| ~~Create temporary "is building" landing page~~ | !!!      | ✅     |
-| ~~Create configuration panel~~                  | !        | ✅     |
-| Create home page                                | !!!      | 👨‍💻     |
-| Create projects page                            | !!!      | ❌     |
-| Create contact page                             | !!!      | ❌     |
-| Create transitions between pages                | !        | ❌     |
-| Add showcase images to this README              | !!       | ❌     |
+## Build the application
+
+Run the following command:
+
+```
+npm run build
+```
+
+The exported application will be available in the `dist/` folder.
