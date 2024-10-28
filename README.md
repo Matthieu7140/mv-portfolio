@@ -14,15 +14,15 @@
 
 # Roadmap
 
-| Task                                                 | Priority | Status |
-| ---------------------------------------------------- | -------- | ------ |
-| ~~Create temporary "is building" landing page~~      | !!!      | ✅     |
-| ~~Create configuration panel~~                       | !        | ✅     |
-| Create way to easily come back to portfolio on demos | !        | 👨‍💻     |
-| Create home page                                     | !!!      | 👨‍💻     |
-| Create projects page                                 | !!!      | ❌     |
-| Create contact page                                  | !!!      | ❌     |
-| Create transitions between pages                     | !        | ❌     |
+| Task                                                     | Priority | Status |
+| -------------------------------------------------------- | -------- | ------ |
+| ~~Create temporary "is building" landing page~~          | !!!      | ✅     |
+| ~~Create configuration panel~~                           | !        | ✅     |
+| ~~Create way to easily come back to portfolio on demos~~ | !        | ✅     |
+| Create home page                                         | !!!      | 👨‍💻     |
+| Create projects page                                     | !!!      | ❌     |
+| Create contact page                                      | !!!      | ❌     |
+| Create transitions between pages                         | !        | ❌     |
 
 # Project informations
 
