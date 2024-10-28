@@ -1,7 +1,6 @@
-/// <reference types="vite-plugin-svgr/client" />
 import { Box, SxProps } from "@mui/material";
 import React, { useEffect } from "react";
-import Logo from "../../public/logo-mono-white.svg?react";
+import Logo from "../../public/cursor.svg?react";
 
 interface BlinkLogoProps {
   width?: number;
@@ -28,17 +27,14 @@ export default function BlinkLogo(props: BlinkLogoProps) {
       <Box
         className="blink-logo-container visible"
         sx={{
-          display: "inline-flex",
+          display: "flex",
           transition: "opacity 0.2s ease-in-out",
           opacity: 0,
           "&.visible": {
             opacity: 1,
           },
           "& > svg": {
-            width: width ? `${width}px` : "50px",
-            height: "auto",
-          },
-          "& > svg > rect": {
+            width: width && `${width}px`,
             fill: fill && fill,
           },
           ...sx,

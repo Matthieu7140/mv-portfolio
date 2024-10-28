@@ -12,8 +12,6 @@ export default function Index() {
   const { t, i18n } = useTranslation("translation", { keyPrefix: "landing" });
   const theme = useTheme();
 
-  console.log(theme);
-
   useEffect(() => {
     setTitle(t("tabTitle"));
   }, [i18n.resolvedLanguage]);
@@ -52,6 +50,7 @@ export default function Index() {
             sx={{
               position: "absolute",
               bottom: 1,
+              display: "inline-flex",
             }}
           />
         </Typography>
