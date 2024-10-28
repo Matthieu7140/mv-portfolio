@@ -1,3 +1,4 @@
+/// <reference types="vite-plugin-svgr/client" />
 import { Box, SxProps } from "@mui/material";
 import React, { useEffect } from "react";
 import Logo from "../../public/logo-mono-white.svg?react";
