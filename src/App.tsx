@@ -1,6 +1,8 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import BlinkLogo from "./components/BlinkLogo";
 import ConfigPanel from "./components/ConfigPanel/ConfigPanel";
 import CustomLink from "./components/CustomLink";
 import { useTitle } from "./contexts/TitleContext";
@@ -8,6 +10,9 @@ import { useTitle } from "./contexts/TitleContext";
 export default function Index() {
   const { setTitle } = useTitle();
   const { t, i18n } = useTranslation("translation", { keyPrefix: "landing" });
+  const theme = useTheme();
+
+  console.log(theme);
 
   useEffect(() => {
     setTitle(t("tabTitle"));
@@ -37,9 +42,18 @@ export default function Index() {
           variant="h1"
           sx={{
             textAlign: "center",
+            position: "relative",
           }}
         >
           {t("title")}
+          <BlinkLogo
+            width={40}
+            fill={theme.palette.primary.main}
+            sx={{
+              position: "absolute",
+              bottom: 1,
+            }}
+          />
         </Typography>
         <Typography
           variant="subtitle1"
