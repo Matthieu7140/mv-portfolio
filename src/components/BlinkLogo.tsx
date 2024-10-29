@@ -1,6 +1,5 @@
 import { Box, SxProps } from "@mui/material";
 import React, { useEffect } from "react";
-import Logo from "../../public/cursor.svg?react";
 
 interface BlinkLogoProps {
   width?: number;
@@ -28,19 +27,25 @@ export default function BlinkLogo(props: BlinkLogoProps) {
         className="blink-logo-container visible"
         sx={{
           display: "flex",
-          transition: "opacity 0.2s ease-in-out",
-          opacity: 0,
-          "&.visible": {
-            opacity: 1,
+          height: "100%",
+          alignItems: "end",
+          "& > svg > rect": {
+            transition: "y 0.2s ease-in-out",
           },
-          "& > svg": {
-            width: width && `${width}px`,
-            fill: fill && fill,
+          "&.visible > svg > rect": {
+            y: 150,
           },
           ...sx,
         }}
       >
-        <Logo />
+        <svg
+          width={width ? width : "50"}
+          viewBox="0 0 800 150"
+          fill={fill ? fill : "#000000"}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="800" height="150" y="0" />
+        </svg>
       </Box>
     </React.Fragment>
   );

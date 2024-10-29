@@ -49,7 +49,7 @@ export default function Index() {
             fill={theme.palette.primary.main}
             sx={{
               position: "absolute",
-              bottom: 1,
+              bottom: 0,
               display: "inline-flex",
             }}
           />
