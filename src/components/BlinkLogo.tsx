@@ -29,17 +29,18 @@ export default function BlinkLogo(props: BlinkLogoProps) {
           display: "flex",
           height: "100%",
           alignItems: "end",
+          width: width ? width : "50",
           "& > svg > rect": {
             transition: "y 0.2s ease-in-out",
           },
           "&.visible > svg > rect": {
-            y: 150,
+            y: 160,
           },
           ...sx,
         }}
       >
         <svg
-          width={width ? width : "50"}
+          width="100%"
           viewBox="0 0 800 150"
           fill={fill ? fill : "#000000"}
           xmlns="http://www.w3.org/2000/svg"
