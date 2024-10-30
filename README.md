@@ -1,16 +1,16 @@
-# Table of contents
+# Table of Contents
 
-- [Table of contents](#table-of-contents)
+- [Table of Contents](#table-of-contents)
 - [Roadmap](#roadmap)
-- [Project informations](#project-informations)
+- [Project Informations](#project-informations)
   - [Description](#description)
-  - [Tech stack](#tech-stack)
+  - [Tech Stack](#tech-stack)
   - [Features](#features)
-- [Run the project](#run-the-project)
-  - [Dependencies install/update](#dependencies-installupdate)
-  - [Run the application](#run-the-application)
+- [Run the Project](#run-the-project)
+  - [Dependencies Install/Update](#dependencies-installupdate)
+  - [Run the Application](#run-the-application)
 - [Deployment](#deployment)
-  - [Build the application](#build-the-application)
+  - [Build the Application](#build-the-application)
 
 # Roadmap
 
@@ -24,13 +24,13 @@
 | Create contact page                                      | !!!      | ❌     |
 | Create transitions between pages                         | !        | ❌     |
 
-# Project informations
+# Project Informations
 
 ## Description
 
 This is the official repository for my personal online portfolio, available [here](https://mvagnon.dev/).
 
-## Tech stack
+## Tech Stack
 
 This web application was built using the following tools:
 
@@ -54,9 +54,9 @@ The app has the following features, designed to showcase my competences:
 | ------------------- | ------------------------------------ |
 | Configuration panel | Customize app's theme, language, ... |
 
-# Run the project
+# Run the Project
 
-## Dependencies install/update
+## Dependencies Install/Update
 
 Run the following command:
 
@@ -64,7 +64,7 @@ Run the following command:
 npm install
 ```
 
-## Run the application
+## Run the Application
 
 Run the following command:
 
@@ -76,7 +76,7 @@ The application will be available at [localhost:3000](http://localhost:3000).
 
 # Deployment
 
-## Build the application
+## Build the Application
 
 Run the following command:
 
