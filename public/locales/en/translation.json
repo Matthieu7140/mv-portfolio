@@ -1,24 +1,24 @@
 {
   "landing": {
     "tabTitle": "Home",
-    "title": "Welcome to my portfolio",
+    "title": "Welcome to my Portfolio",
     "subtitle": "As you can see, I am still building my online portfolio. Expect to see it live soon!",
-    "gitHub": "See the public repository"
+    "gitHub": "See the Public Repository"
   },
   "other": {
     "configPanel": {
-      "title": "Configuration panel",
+      "title": "Configuration Panel",
       "theme": {
         "title": "Theme",
         "mode": {
           "title": "Mode:",
-          "system": "System (default)",
+          "system": "System (Default)",
           "light": "Light",
           "dark": "Dark"
         },
         "accent": {
           "title": "Accent color:",
-          "blue": "Blue (default)",
+          "blue": "Blue (Default)",
           "orange": "Orange",
           "pink": "Pink"
         }
@@ -27,14 +27,14 @@
         "title": "Content",
         "language": {
           "title": "Language:",
-          "default": "(default)"
+          "default": "(Default)"
         }
       },
       "reset": {
         "title": "Reset",
-        "themeParameters": "Reset theme parameters",
-        "contentParameters": "Reset content parameters",
-        "all": "Reset all"
+        "themeParameters": "Reset Theme Parameters",
+        "contentParameters": "Reset Content Parameters",
+        "all": "Reset All"
       }
     }
   }
