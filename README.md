@@ -39,6 +39,7 @@ This web application was built using the following tools:
 - Vite.js
 - React Router
 - Material UI
+- JS/JSX/HTML/CSS
 
 ## Features
 
