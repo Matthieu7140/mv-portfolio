@@ -34,7 +34,7 @@ export default function BlinkLogo(props: BlinkLogoProps) {
             transition: "y 0.2s ease-in-out",
           },
           "&.visible > svg > rect": {
-            y: 160,
+            y: 150,
           },
           ...sx,
         }}
