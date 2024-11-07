@@ -100,36 +100,96 @@ export const dark = {
   palette: {
     mode: "dark",
     divider: "rgba(255, 255, 255, 0.08)",
-    background: {
-      paper: "#001121",
-      default: "#001428",
-    },
   },
 };
 
 // Accent colors definition
 export const accentColors = {
   blue: {
-    palette: {
-      primary: {
-        main: "#007FFF",
-        light: "#007FFF33",
+    light: {
+      palette: {
+        primary: {
+          main: "#007FFF",
+          light: "#007FFF33",
+        },
+      },
+    },
+    dark: {
+      palette: {
+        primary: {
+          main: "#007FFF",
+          light: "#007FFF33",
+        },
+        background: {
+          paper: "#000e1c",
+          default: "#001428",
+        },
       },
     },
   },
   orange: {
-    palette: {
-      primary: {
-        main: "#ff4400",
-        light: "#ff440033",
+    light: {
+      palette: {
+        primary: {
+          main: "#ff4400",
+          light: "#ff440033",
+        },
+      },
+    },
+    dark: {
+      palette: {
+        primary: {
+          main: "#ff4400",
+          light: "#ff440033",
+        },
+        background: {
+          paper: "#140000",
+          default: "#1a0600",
+        },
+      },
+    },
+  },
+  green: {
+    light: {
+      palette: {
+        primary: {
+          main: "#36d95c",
+          light: "#36d95c33",
+        },
+      },
+    },
+    dark: {
+      palette: {
+        primary: {
+          main: "#36d95c",
+          light: "#36d95c33",
+        },
+        background: {
+          paper: "#001204",
+          default: "#002408",
+        },
       },
     },
   },
   pink: {
-    palette: {
-      primary: {
-        main: "#e180ff",
-        light: "#e180ff33",
+    light: {
+      palette: {
+        primary: {
+          main: "#e180ff",
+          light: "#e180ff33",
+        },
+      },
+    },
+    dark: {
+      palette: {
+        primary: {
+          main: "#e180ff",
+          light: "#e180ff33",
+        },
+        background: {
+          paper: "#14000f",
+          default: "#29001f",
+        },
       },
     },
   },

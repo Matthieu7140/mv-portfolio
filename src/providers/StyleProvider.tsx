@@ -25,13 +25,13 @@ export default function StyleProvider({
     ? createTheme(
         deepmerge(
           deepmerge(global, light),
-          accentColors[accentColor as keyof typeof accentColors]
+          accentColors[accentColor as keyof typeof accentColors].light
         )
       )
     : createTheme(
         deepmerge(
           deepmerge(global, dark),
-          accentColors[accentColor as keyof typeof accentColors]
+          accentColors[accentColor as keyof typeof accentColors].dark
         )
       );
 

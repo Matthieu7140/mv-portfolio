@@ -20,6 +20,7 @@
           "title": "Accent color:",
           "blue": "Blue (Default)",
           "orange": "Orange",
+          "green": "Green",
           "pink": "Pink"
         }
       },
