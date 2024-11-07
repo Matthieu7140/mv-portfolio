@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import BlinkLogo from "./components/BlinkLogo";
 import ConfigPanel from "./components/ConfigPanel/ConfigPanel";
 import CustomLink from "./components/CustomLink";
+import LoadAnimation from "./components/LoadAnimation/LoadAnimation";
 import { useTitle } from "./contexts/TitleContext";
 
 export default function Index() {
@@ -18,6 +19,7 @@ export default function Index() {
 
   return (
     <React.Fragment>
+      <LoadAnimation />
       <Box
         sx={{
           position: "absolute",

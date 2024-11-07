@@ -93,12 +93,19 @@ export const global = {
 export const light = {
   palette: {
     mode: "light",
+    secondary: {
+      main: "rgb(255, 255, 255)",
+    },
     divider: "rgba(0, 0, 0, 0.08)",
+    background: { default: "rgb(224, 224, 224)" },
   },
 };
 export const dark = {
   palette: {
     mode: "dark",
+    secondary: {
+      main: "rgb(200, 200, 200)",
+    },
     divider: "rgba(255, 255, 255, 0.08)",
   },
 };
