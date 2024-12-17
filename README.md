@@ -19,6 +19,7 @@
 | ~~Create temporary "is building" landing page~~          | !!!      | ✅     |
 | ~~Create configuration panel~~                           | !        | ✅     |
 | ~~Create way to easily come back to portfolio on demos~~ | !        | ✅     |
+| Migrate to Tailwind CSS                                  | !!!      | 👨‍💻     |
 | Create home page                                         | !!!      | 👨‍💻     |
 | Create projects page                                     | !!!      | ❌     |
 | Create contact page                                      | !!!      | ❌     |
